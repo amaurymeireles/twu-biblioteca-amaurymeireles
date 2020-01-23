@@ -8,11 +8,11 @@ public class BooksManager {
 
     BooksManager(boolean createDefaultBooksList){
         if(createDefaultBooksList){
-            booksList.add(new Book("1984"));
-            booksList.add(new Book("Animal Farm"));
-            booksList.add(new Book("It"));
-            booksList.add(new Book("Pet Sematary"));
-            booksList.add(new Book("Dagon"));
+            booksList.add(new Book("1984", "George", 1949));
+            booksList.add(new Book("Animal Farm","George", 1945));
+            booksList.add(new Book("It", "King", 1986));
+            booksList.add(new Book("Pet Sematary", "King", 1983));
+            booksList.add(new Book("Dagon", "Lovecraft", 1916));
         }
     }
 
