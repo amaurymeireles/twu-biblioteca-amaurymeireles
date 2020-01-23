@@ -14,7 +14,9 @@ public class MessageHandler {
         ArrayList<Book> booksList = booksManager.getBooksList();
 
         for(int i = 0; i < booksList.size(); i++){
-            System.out.println((i+1)+"-"+booksList.get(i).getName());
+            System.out.println((i+1)+")Title:"+booksList.get(i).getName()+
+                    "|Author:"+booksList.get(i).getAuthor()+
+                    "|Year:"+booksList.get(i).getYear());
         }
     }
 

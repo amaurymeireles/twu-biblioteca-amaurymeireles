@@ -39,6 +39,6 @@ public class MessageHandlerTest {
                 "\n2)Title:Animal Farm|Author:George|Year:1945"+
                 "\n3)Title:It|Author:King|Year:1986"+
                 "\n4)Title:Pet Sematary|Author:King|Year:1983"+
-                "\n5)Title:Dagon|Author:LoveCraft|Year1916:\n", outContent.toString());
+                "\n5)Title:Dagon|Author:Lovecraft|Year:1916\n", outContent.toString());
     }
 }
