@@ -13,26 +13,22 @@ import static org.junit.Assert.assertEquals;
 
 public class MessageHandlerTest {
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
-    private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
     private final PrintStream originalOut = System.out;
-    private final PrintStream originalErr = System.err;
 
     @Before
     public void setUpStreams() {
         System.setOut(new PrintStream(outContent));
-        System.setErr(new PrintStream(errContent));
     }
 
     @After
     public void restoreStreams() {
         System.setOut(originalOut);
-        System.setErr(originalErr);
     }
 
     @Test
     public void verifyIfThereIsAWelcomeMessage() {
         MessageHandler messageHandler = new MessageHandler();
-        messageHandler.welcomeMessage();
+        messageHandler.showWelcomeMessage();
         assertEquals("Welcome to Biblioteca. Your one-stop-shop for great book titles in Bangalore!", outContent.toString());
     }
 }
