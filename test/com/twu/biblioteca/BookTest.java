@@ -4,7 +4,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-public class bookTest {
+public class BookTest {
     @Test
     public void verifyBookTitleAuthorYear(){
         Book book = new Book("Harry Potter", "J.K", 1997);

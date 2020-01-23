@@ -6,7 +6,7 @@ import static org.junit.Assert.assertEquals;
 import java.util.ArrayList;
 
 
-public class booksManagerTest {
+public class BooksManagerTest {
     @Test
     public void verifyIfThereIsTheDefaultBooks(){
         BooksManager booksManager = new BooksManager(true);

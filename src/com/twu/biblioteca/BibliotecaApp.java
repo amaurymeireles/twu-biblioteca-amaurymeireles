@@ -6,6 +6,5 @@ public class BibliotecaApp {
         MessageHandler messageHandler = new MessageHandler();
         messageHandler.showWelcomeMessage();
         messageHandler.showBooksList();
-
     }
 }
