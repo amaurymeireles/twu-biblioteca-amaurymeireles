@@ -33,6 +33,12 @@ public class MessageHandlerTest {
     }
 
     @Test
+    public void verifyMenuList() {
+        messageHandler.showMenuList();
+        assertEquals("Choose your option\n1)ListBooks\n", outContent.toString());
+    }
+
+    @Test
     public void verifyBooksList(){
         messageHandler.showBooksList();
         assertEquals("1)Title:1984|Author:George|Year:1949"+
