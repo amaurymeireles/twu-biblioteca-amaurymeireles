@@ -25,7 +25,7 @@ public class BooksManagerTest {
     public void verifyListAfterCheckout(){
         ArrayList<Book> availableBooksList;
         booksList.get(1).checkout();
-        availableBooksList = booksManager.getBooksList();
+        availableBooksList = booksManager.getAvailableBookList();
         assertEquals(availableBooksList.size(), 4);
     }
 

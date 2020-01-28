@@ -21,6 +21,14 @@ public class BooksManager {
         return booksList;
     }
 
-
+    public ArrayList<Book> getAvailableBookList() {
+        ArrayList<Book> availableBooks = new ArrayList<Book>();
+        booksList.forEach(book -> {
+            if (book.isAvailable()) {
+                availableBooks.add(book);
+            }
+        });
+        return availableBooks;
+    }
 
 }
