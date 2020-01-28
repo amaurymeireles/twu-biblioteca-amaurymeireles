@@ -1,5 +1,6 @@
 package com.twu.biblioteca;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -7,12 +8,25 @@ import java.util.ArrayList;
 
 
 public class BooksManagerTest {
+    BooksManager booksManager;
+    ArrayList<Book> booksList;
+    @Before
+    public void startBooksList() {
+        booksManager = new BooksManager(true);
+        booksList = booksManager.getBooksList();
+    }
+
     @Test
     public void verifyIfThereIsTheDefaultBooks(){
-        BooksManager booksManager = new BooksManager(true);
-        ArrayList<Book> booksList = new ArrayList<Book>();
-        booksList = booksManager.getBooksList();
         assertEquals(booksList.size(), 5);
+    }
+
+    @Test
+    public void verifyListAfterCheckout(){
+        ArrayList<Book> availableBooksList;
+        booksList.get(1).checkout();
+        availableBooksList = booksManager.getBooksList();
+        assertEquals(availableBooksList.size(), 4);
     }
 
 }

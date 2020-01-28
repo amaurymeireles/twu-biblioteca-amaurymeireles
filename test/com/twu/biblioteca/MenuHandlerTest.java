@@ -30,9 +30,9 @@ public class MenuHandlerTest {
         assertEquals(1, menuHandler.getScreen());
     }
     @Test
-    public void verifyRedirectToLQuitApplication(){
-        menuHandler.redirect(2);
-        assertEquals(2, menuHandler.getScreen());
+    public void verifyRedirectToQuitApplication(){
+        menuHandler.redirect(9);
+        assertEquals(9, menuHandler.getScreen());
     }
 
 
@@ -56,6 +56,7 @@ public class MenuHandlerTest {
                 "\n2)Title:Animal Farm|Author:George|Year:1945"+
                 "\n3)Title:It|Author:King|Year:1986"+
                 "\n4)Title:Pet Sematary|Author:King|Year:1983"+
+                "\n5)Title:Dagon|Author:Lovecraft|Year:1916\n",
                 "\n5)Title:Dagon|Author:Lovecraft|Year:1916\n", outContent.toString());
     }
 
@@ -64,5 +65,17 @@ public class MenuHandlerTest {
         menuHandler.redirect(5);
         menuHandler.renderScreen();
         assertEquals("Please select a valid option!\n", outContent.toString());
+    }
+
+    @Test
+    public void verifyCheckoutBookScreen(){
+        menuHandler.redirect(2);
+        menuHandler.renderScreen();
+        assertEquals("1)Title:1984|Author:George|Year:1949"+
+                        "\n2)Title:Animal Farm|Author:George|Year:1945"+
+                        "\n3)Title:It|Author:King|Year:1986"+
+                        "\n4)Title:Pet Sematary|Author:King|Year:1983"+
+                        "\n5)Title:Dagon|Author:Lovecraft|Year:1916"+
+                        "\nPlease select a book to checkout: \n", outContent.toString());
     }
 }
