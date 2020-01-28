@@ -5,13 +5,16 @@ import java.util.Scanner;
 public class BibliotecaApp {
 
     public static void main(String[] args) {
+        int redirectInput = 0;
         Scanner reader = new Scanner(System.in);
-        int redirectInput;
         MenuHandler menuHandler = new MenuHandler();
-        menuHandler.renderScreen();
-        redirectInput = reader.nextInt();
-        menuHandler.redirect(redirectInput);
-        menuHandler.renderScreen();
+        while(redirectInput !=2){
+            menuHandler.renderScreen();
+            redirectInput = reader.nextInt();
+            menuHandler.redirect(redirectInput);
+            menuHandler.renderScreen();
+        }
 
     }
+
 }

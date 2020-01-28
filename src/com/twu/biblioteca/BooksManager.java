@@ -4,9 +4,10 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class BooksManager {
-    ArrayList<Book> booksList = new ArrayList<Book>();
+    private ArrayList<Book> booksList;
 
     BooksManager(boolean createDefaultBooksList){
+        booksList = new ArrayList<Book>();
         if(createDefaultBooksList){
             booksList.add(new Book("1984", "George", 1949));
             booksList.add(new Book("Animal Farm","George", 1945));

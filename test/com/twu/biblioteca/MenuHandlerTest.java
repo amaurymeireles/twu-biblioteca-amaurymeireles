@@ -29,7 +29,11 @@ public class MenuHandlerTest {
         menuHandler.redirect(1);
         assertEquals(1, menuHandler.getScreen());
     }
-
+    @Test
+    public void verifyRedirectToLQuitApplication(){
+        menuHandler.redirect(2);
+        assertEquals(2, menuHandler.getScreen());
+    }
 
 
     @Test
@@ -41,7 +45,7 @@ public class MenuHandlerTest {
     public void verifyRenderStartScreen(){
         menuHandler.renderScreen();
         assertEquals("Welcome to Biblioteca. Your one-stop-shop for great book titles in Bangalore!\n"+
-                "Choose your option\n1)ListBooks\n", outContent.toString());
+                "Choose your option\n1)ListBooks\n2)Quit Application\n", outContent.toString());
     }
 
     @Test
@@ -58,6 +62,7 @@ public class MenuHandlerTest {
     @Test
     public void verifyInvalidRedirect(){
         menuHandler.redirect(5);
+        menuHandler.renderScreen();
         assertEquals("Please select a valid option!\n", outContent.toString());
     }
 }

@@ -35,7 +35,7 @@ public class MessageHandlerTest {
     @Test
     public void verifyMenuList() {
         messageHandler.showMenuList();
-        assertEquals("Choose your option\n1)ListBooks\n", outContent.toString());
+        assertEquals("Choose your option\n1)ListBooks\n2)Quit Application\n", outContent.toString());
     }
 
     @Test

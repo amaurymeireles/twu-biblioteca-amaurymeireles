@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class MessageHandler {
     private final String welcomeMessage = "Welcome to Biblioteca. Your one-stop-shop for great book titles in Bangalore!";
-    private final String menuList = "Choose your option\n1)ListBooks";
+    private final String menuList = "Choose your option\n1)ListBooks\n2)Quit Application";
 
     public void showWelcomeMessage(){
         System.out.println(welcomeMessage);
