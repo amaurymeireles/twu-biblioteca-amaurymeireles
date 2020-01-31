@@ -31,4 +31,15 @@ public class BooksManager {
         return availableBooks;
     }
 
+    public ArrayList<Book> getCheckInList(){
+        ArrayList<Book> unavailableBooks = new ArrayList<Book>();
+        booksList.forEach(book -> {
+            if(!book.isAvailable()) {
+                unavailableBooks.add(book);
+            }
+        });
+        return unavailableBooks;
+
+    }
+
 }

@@ -8,7 +8,7 @@ public class BibliotecaApp {
         int redirectInput = 0;
         Scanner reader = new Scanner(System.in);
         MenuHandler menuHandler = new MenuHandler();
-        while(redirectInput !=2){
+        while(redirectInput !=9){
             menuHandler.renderScreen();
             redirectInput = reader.nextInt();
             menuHandler.redirect(redirectInput);

@@ -45,7 +45,7 @@ public class MenuHandlerTest {
     public void verifyRenderStartScreen(){
         menuHandler.renderScreen();
         assertEquals("Welcome to Biblioteca. Your one-stop-shop for great book titles in Bangalore!\n"+
-                "Choose your option\n1)ListBooks\n2)Quit Application\n", outContent.toString());
+                "Choose your option\n1)ListBooks\n2)Checkout a book\n3)Check in a book\n9)Quit Application\n", outContent.toString());
     }
 
     @Test
@@ -56,8 +56,7 @@ public class MenuHandlerTest {
                 "\n2)Title:Animal Farm|Author:George|Year:1945"+
                 "\n3)Title:It|Author:King|Year:1986"+
                 "\n4)Title:Pet Sematary|Author:King|Year:1983"+
-                "\n5)Title:Dagon|Author:Lovecraft|Year:1916\n",
-                "\n5)Title:Dagon|Author:Lovecraft|Year:1916\n", outContent.toString());
+                "\n5)Title:Dagon|Author:Lovecraft|Year:1916\n\n", outContent.toString());
     }
 
     @Test
@@ -67,15 +66,4 @@ public class MenuHandlerTest {
         assertEquals("Please select a valid option!\n", outContent.toString());
     }
 
-    @Test
-    public void verifyCheckoutBookScreen(){
-        menuHandler.redirect(2);
-        menuHandler.renderScreen();
-        assertEquals("1)Title:1984|Author:George|Year:1949"+
-                        "\n2)Title:Animal Farm|Author:George|Year:1945"+
-                        "\n3)Title:It|Author:King|Year:1986"+
-                        "\n4)Title:Pet Sematary|Author:King|Year:1983"+
-                        "\n5)Title:Dagon|Author:Lovecraft|Year:1916"+
-                        "\nPlease select a book to checkout: \n", outContent.toString());
-    }
 }

@@ -28,4 +28,5 @@ public class Book {
 
     public void checkout(){this.available = false;}
 
+    public void checkin(){this.available = true;}
 }
