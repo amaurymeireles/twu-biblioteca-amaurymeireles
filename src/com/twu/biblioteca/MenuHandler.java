@@ -6,10 +6,10 @@ public class MenuHandler {
     private final int MENU = 0, LIST_BOOKS = 1, CHECKOUT_BOOKS = 2, CHECKIN_BOOKS = 3, EXIT= 9;
     private int screen;
     private MessageHandler messageHandler;
-    private BooksManager booksManager;
+    private ItemsManager itemsManager;
 
     public MenuHandler(){
-        booksManager = new BooksManager(true);
+        itemsManager = new ItemsManager(true);
         messageHandler = new MessageHandler();
         this.screen = MENU;
     }
@@ -31,15 +31,15 @@ public class MenuHandler {
                 messageHandler.showMenuList();
             break;
             case LIST_BOOKS:
-                messageHandler.showBooksList(booksManager);
+                messageHandler.showBooksList(itemsManager);
                 this.redirect(0);
             break;
             case CHECKOUT_BOOKS:
-                messageHandler.showAvailableBooksList(booksManager);
+                messageHandler.showAvailableBooksList(itemsManager);
                 messageHandler.showCheckoutSelectBookMessage();
                 selectedBook = reader.nextInt();
-                if(selectedBook <= booksManager.getAvailableBookList().size()) {
-                    booksManager.getAvailableBookList().get(selectedBook - 1).checkout();
+                if(selectedBook <= itemsManager.getAvailableBookList().size()) {
+                    itemsManager.getAvailableBookList().get(selectedBook - 1).checkout();
                     messageHandler.showSuccessfulCheckout();
                 }else{
                     messageHandler.showUnsuccessfulCheckout();
@@ -47,11 +47,11 @@ public class MenuHandler {
                 this.redirect(0);
             break;
             case CHECKIN_BOOKS:
-                messageHandler.showCheckInBooksList(booksManager);
+                messageHandler.showCheckInBooksList(itemsManager);
                 messageHandler.showCheckInSelectBookMessage();
                 selectedBook = reader.nextInt();
-                if(selectedBook <= booksManager.getCheckInList().size()) {
-                    booksManager.getCheckInList().get(selectedBook-1).checkin();
+                if(selectedBook <= itemsManager.getCheckInList().size()) {
+                    itemsManager.getCheckInList().get(selectedBook-1).checkin();
                     messageHandler.showSuccessfulCheckIn();
                 }else{
                     messageHandler.showUnsuccessfulCheckIn();

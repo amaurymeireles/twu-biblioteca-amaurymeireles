@@ -35,8 +35,8 @@ public class MessageHandler {
 
     public void showUnsuccessfulCheckout() {System.out.println(unsuccessfulCheckout);}
 
-    public void showAvailableBooksList(BooksManager booksManager){
-        ArrayList<Book> booksList = booksManager.getAvailableBookList();
+    public void showAvailableBooksList(ItemsManager itemsManager){
+        ArrayList<Book> booksList = itemsManager.getAvailableBookList();
 
         for(int i = 0; i < booksList.size(); i++){
             System.out.println((i+1)+")Title:"+booksList.get(i).getName()+
@@ -46,8 +46,8 @@ public class MessageHandler {
         System.out.println("");
     }
 
-    public void showCheckInBooksList(BooksManager booksManager){
-        ArrayList<Book> booksList = booksManager.getCheckInList();
+    public void showCheckInBooksList(ItemsManager itemsManager){
+        ArrayList<Book> booksList = itemsManager.getCheckInList();
 
         for(int i = 0; i < booksList.size(); i++){
             System.out.println((i+1)+")Title:"+booksList.get(i).getName()+
@@ -56,8 +56,8 @@ public class MessageHandler {
         }
         System.out.println("");
     }
-    public void showBooksList(BooksManager booksManager){
-        ArrayList<Book> booksList = booksManager.getBooksList();
+    public void showBooksList(ItemsManager itemsManager){
+        ArrayList<Book> booksList = itemsManager.getBooksList();
 
         for(int i = 0; i < booksList.size(); i++){
             System.out.println((i+1)+")Title:"+booksList.get(i).getName()+

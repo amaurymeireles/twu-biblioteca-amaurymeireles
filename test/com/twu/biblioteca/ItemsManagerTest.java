@@ -9,13 +9,13 @@ import static org.junit.Assert.assertFalse;
 import java.util.ArrayList;
 
 
-public class BooksManagerTest {
-    BooksManager booksManager;
+public class ItemsManagerTest {
+    ItemsManager itemsManager;
     ArrayList<Book> booksList;
     @Before
     public void startBooksList() {
-        booksManager = new BooksManager(true);
-        booksList = booksManager.getBooksList();
+        itemsManager = new ItemsManager(true);
+        booksList = itemsManager.getBooksList();
     }
 
     @Test
@@ -27,7 +27,7 @@ public class BooksManagerTest {
     public void verifyAvailableListAfterCheckout(){
         ArrayList<Book> availableBooksList;
         booksList.get(1).checkout();
-        availableBooksList = booksManager.getAvailableBookList();
+        availableBooksList = itemsManager.getAvailableBookList();
         assertEquals(availableBooksList.size(), 4);
     }
 
@@ -35,14 +35,14 @@ public class BooksManagerTest {
     public void verifyListAfterCheckout(){
         ArrayList<Book> availableBooksList;
         booksList.get(1).checkout();
-        availableBooksList = booksManager.getBooksList();
+        availableBooksList = itemsManager.getBooksList();
         assertEquals(availableBooksList.size(), 5);
     }
 
     @Test
     public void verifyCheckInList(){
         ArrayList<Book> availableBooksList;
-        availableBooksList = booksManager.getCheckInList();
+        availableBooksList = itemsManager.getCheckInList();
         assertEquals(availableBooksList.size(), 0);
     }
 
@@ -50,7 +50,7 @@ public class BooksManagerTest {
     public void verifyCheckInListAfterACheckout(){
         ArrayList<Book> checkinBooksList;
         booksList.get(1).checkout();
-        checkinBooksList = booksManager.getCheckInList();
+        checkinBooksList = itemsManager.getCheckInList();
         assertEquals(checkinBooksList.size(), 1);
     }
 
@@ -59,7 +59,7 @@ public class BooksManagerTest {
         ArrayList<Book> availableBooksList;
         booksList.get(1).checkout();
         booksList.get(1).checkin();
-        availableBooksList = booksManager.getAvailableBookList();
+        availableBooksList = itemsManager.getAvailableBookList();
         assertEquals(availableBooksList.size(), 5);
     }
 
@@ -68,7 +68,7 @@ public class BooksManagerTest {
         ArrayList<Book> checkinBooksList;
         booksList.get(1).checkout();
         booksList.get(1).checkin();
-        checkinBooksList = booksManager.getCheckInList();
+        checkinBooksList = itemsManager.getCheckInList();
         assertEquals(checkinBooksList.size(), 0);
     }
 }

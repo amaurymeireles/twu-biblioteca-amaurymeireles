@@ -1,32 +1,14 @@
 package com.twu.biblioteca;
 
-public class Book {
-    private String name, author;
-    private int year;
-    private boolean available;
+public class Book extends Item{
+    private String author;
 
     public Book(String name, String author, int year) {
-        this.name = name;
+        super(name, year, true);
         this.author = author;
-        this.year = year;
-        this.available = true;
-    }
-
-    public String getName() {
-        return name;
     }
 
     public String getAuthor() {
         return author;
     }
-
-    public int getYear() {
-        return year;
-    }
-
-    public boolean isAvailable(){return available;}
-
-    public void checkout(){this.available = false;}
-
-    public void checkin(){this.available = true;}
 }

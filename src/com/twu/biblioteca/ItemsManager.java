@@ -3,10 +3,10 @@ package com.twu.biblioteca;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 
-public class BooksManager {
+public class ItemsManager {
     private ArrayList<Book> booksList;
 
-    BooksManager(boolean createDefaultBooksList){
+    ItemsManager(boolean createDefaultBooksList){
         booksList = new ArrayList<Book>();
         if(createDefaultBooksList){
             booksList.add(new Book("1984", "George", 1949));
