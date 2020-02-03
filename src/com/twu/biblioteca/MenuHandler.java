@@ -3,7 +3,7 @@ package com.twu.biblioteca;
 import java.util.Scanner;
 
 public class MenuHandler {
-    private final int MENU = 0, LIST_BOOKS = 1, CHECKOUT_BOOKS = 2, CHECKIN_BOOKS = 3, EXIT= 9;
+    private final int MENU = 0, LIST_BOOKS = 1, CHECKOUT_BOOKS = 2, CHECKIN_BOOKS = 3, LIST_MOVIES = 4,EXIT= 9;
     private int screen;
     private MessageHandler messageHandler;
     private ItemsManager itemsManager;
@@ -56,6 +56,10 @@ public class MenuHandler {
                 }else{
                     messageHandler.showUnsuccessfulCheckIn();
                 }
+                this.redirect(0);
+            break;
+            case LIST_MOVIES:
+                messageHandler.showMoviesList(itemsManager);
                 this.redirect(0);
             break;
             case EXIT:

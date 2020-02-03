@@ -12,16 +12,22 @@ import java.util.ArrayList;
 public class ItemsManagerTest {
     ItemsManager itemsManager;
     ArrayList<Book> booksList;
+    ArrayList<Movie> moviesList;
+
     @Before
-    public void startBooksList() {
+    public void startItemsList() {
         itemsManager = new ItemsManager(true);
         booksList = itemsManager.getBooksList();
+        moviesList = itemsManager.getMoviesList();
     }
 
     @Test
     public void verifyIfThereIsTheDefaultBooks(){
         assertEquals(booksList.size(), 5);
     }
+
+    @Test
+    public void verifyIfThereIsTheDefaultMovies(){assertEquals(moviesList.size(), 3);}
 
     @Test
     public void verifyAvailableListAfterCheckout(){

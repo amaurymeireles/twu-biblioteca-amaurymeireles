@@ -4,7 +4,8 @@ import java.util.ArrayList;
 
 public class MessageHandler {
     private final String welcomeMessage = "Welcome to Biblioteca. Your one-stop-shop for great book titles in Bangalore!";
-    private final String menuList = "Choose your option\n1)ListBooks\n2)Checkout a book\n3)Check in a book\n9)Quit Application";
+    private final String menuList = "Choose your option\n1)ListBooks\n2)Checkout a book\n3)Check in a book"+
+        "\n4)ListMovies\n9)Quit Application";
     private final String selectCheckOutBookMessage = "Please select a book to checkout:";
     private final String selectCheckInBookMessage = "Please select a book to check in:";
     private final String successfulCheckout = "Thank you! Enjoy the book!\n";
@@ -63,6 +64,18 @@ public class MessageHandler {
             System.out.println((i+1)+")Title:"+booksList.get(i).getName()+
                     "|Author:"+booksList.get(i).getAuthor()+
                     "|Year:"+booksList.get(i).getYear());
+        }
+        System.out.println("");
+    }
+
+    public void showMoviesList(ItemsManager itemsManager){
+        ArrayList<Movie> moviesList = itemsManager.getMoviesList();
+
+        for(int i = 0; i < moviesList.size(); i++){
+            System.out.println((i+1)+")Title:"+moviesList.get(i).getName()+
+                    "|Author:"+moviesList.get(i).getDirector()+
+                    "|Year:"+moviesList.get(i).getYear()+
+                    "|Rating:"+moviesList.get(i).getRating());
         }
         System.out.println("");
     }
