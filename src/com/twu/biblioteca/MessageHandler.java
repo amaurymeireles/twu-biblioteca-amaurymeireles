@@ -5,8 +5,9 @@ import java.util.ArrayList;
 public class MessageHandler {
     private final String welcomeMessage = "Welcome to Biblioteca. Your one-stop-shop for great book titles in Bangalore!";
     private final String menuList = "Choose your option\n1)ListBooks\n2)Checkout a book\n3)Check in a book"+
-        "\n4)ListMovies\n9)Quit Application";
+        "\n4)ListMovies\n5)Checkout a Movie\n9)Quit Application";
     private final String selectCheckOutBookMessage = "Please select a book to checkout:";
+    private final String selectCheckOutMovieMessage = "Please select a movie to checkout:";
     private final String selectCheckInBookMessage = "Please select a book to check in:";
     private final String successfulCheckout = "Thank you! Enjoy the book!\n";
     private final String unsuccessfulCheckout = "Sorry, that book is not available\n";
@@ -22,6 +23,9 @@ public class MessageHandler {
         System.out.println(selectCheckOutBookMessage);
     }
 
+    public void showCheckoutMovieMessage(){
+        System.out.println(selectCheckOutMovieMessage);
+    }
     public void showUnsuccessfulCheckIn(){
         System.out.println(unsuccessfulCheckIn);
     }
@@ -79,6 +83,21 @@ public class MessageHandler {
         }
         System.out.println("");
     }
+
+
+
+    public void showAvailableMoviesList(ItemsManager itemsManager){
+        ArrayList<Movie> moviesList = itemsManager.getAvailableMovieList();
+
+        for(int i = 0; i < moviesList.size(); i++){
+            System.out.println((i+1)+")Title:"+moviesList.get(i).getName()+
+                    "|Author:"+moviesList.get(i).getDirector()+
+                    "|Year:"+moviesList.get(i).getYear()+
+                    "|Rating:"+moviesList.get(i).getRating());
+        }
+        System.out.println("");
+    }
+
 
 
     public void showMenuList(){

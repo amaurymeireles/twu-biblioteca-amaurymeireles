@@ -77,4 +77,21 @@ public class ItemsManagerTest {
         checkinBooksList = itemsManager.getCheckInList();
         assertEquals(checkinBooksList.size(), 0);
     }
+
+    @Test
+    public void verifyAvailableMovieListAfterCheckout(){
+        ArrayList<Movie> checkoutMovieList;
+        moviesList.get(1).checkout();
+        checkoutMovieList = itemsManager.getAvailableMovieList();
+        assertEquals(checkoutMovieList.size(), 2);
+    }
+
+    @Test
+    public void verifyAvailableMovieListAfterCheckin(){
+        ArrayList<Movie> checkinMovieList;
+        moviesList.get(1).checkout();
+        moviesList.get(1).checkin();
+        checkinMovieList = itemsManager.getAvailableMovieList();
+        assertEquals(checkinMovieList.size(), 3);
+    }
 }

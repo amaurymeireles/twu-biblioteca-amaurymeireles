@@ -49,6 +49,16 @@ public class ItemsManager {
         return availableBooks;
     }
 
+    public ArrayList<Movie> getAvailableMovieList() {
+        ArrayList<Movie> availableMovies= new ArrayList<Movie>();
+        moviesList.forEach(movie -> {
+            if (movie.isAvailable()) {
+                availableMovies.add(movie);
+            }
+        });
+        return availableMovies;
+    }
+
     public ArrayList<Book> getCheckInList(){
         ArrayList<Book> unavailableBooks = new ArrayList<Book>();
         booksList.forEach(book -> {
