@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class MessageHandler {
     private final String welcomeMessage = "Welcome to Biblioteca. Your one-stop-shop for great book titles in Bangalore!";
     private final String menuList = "Choose your option\n1)ListBooks\n2)Checkout a book\n3)Check in a book"+
-        "\n4)ListMovies\n5)Checkout a Movie\n9)Quit Application";
+        "\n4)ListMovies\n5)Checkout a Movie\n6)User Info\n9)Quit Application";
     private final String selectCheckOutBookMessage = "Please select a book to checkout:";
     private final String selectCheckOutMovieMessage = "Please select a movie to checkout:";
     private final String selectCheckInBookMessage = "Please select a book to check in:";
@@ -66,6 +66,7 @@ public class MessageHandler {
         System.out.println("Name: " + user.getName());
         System.out.println("Email: "+ user.getEmail());
         System.out.println("Phone: "+ user.getPhone());
+        System.out.println("");
     }
 
     public void showCheckInBooksList(ItemsManager itemsManager){
