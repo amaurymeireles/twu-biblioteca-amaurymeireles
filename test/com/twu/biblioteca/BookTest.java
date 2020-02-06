@@ -7,9 +7,11 @@ import static org.junit.Assert.*;
 
 public class BookTest {
     Book book;
+    User user;
     @Before
     public void createHarryPotter(){
          book = new Book("Harry Potter", "J.K", 1997);
+         user = new User("123-4567", "123");
     }
 
 
@@ -23,13 +25,13 @@ public class BookTest {
 
     @Test
     public void verifyCheckout(){
-        book.checkout();
+        book.checkout(user);
         assertFalse(book.isAvailable());
     }
 
     @Test
     public void verifyCheckIn(){
-        book.checkout();
+        book.checkout(user);
         book.checkin();
         assertTrue(book.isAvailable());
 

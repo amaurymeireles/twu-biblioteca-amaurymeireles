@@ -4,6 +4,7 @@ public abstract class Item {
     private String name;
     private int year;
     private boolean available;
+    User user;
 
     public Item(String name, int year, boolean available) {
         this.name = name;
@@ -23,7 +24,14 @@ public abstract class Item {
         return available;
     }
 
-    public void checkout(){this.available = false;}
+    public void checkout(User user){
+        this.available = false;
+        this.user = user;
+    }
+
+    public User getUser() {
+        return user;
+    }
 
     public void checkin(){this.available = true;}
 }

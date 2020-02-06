@@ -13,10 +13,21 @@ public class MessageHandler {
     private final String unsuccessfulCheckout = "Sorry, that book is not available\n";
     private final String successfulCheckIn = "Thank you for returning the book\n";
     private final String unsuccessfulCheckIn = "That is not a valid book to return";
+    private final String loginMessage = "Please enter your user name and password: ";
+    private final String failedLoginMessage = "Invalid UserId and Password!";
+
 
 
     public void showWelcomeMessage(){
         System.out.println(welcomeMessage);
+    }
+
+    public void showFailedLoginMessage(){
+        System.out.println(failedLoginMessage);
+    }
+
+    public void showLoginMessage(){
+        System.out.println(loginMessage);
     }
 
     public void showCheckoutSelectBookMessage(){
@@ -51,13 +62,20 @@ public class MessageHandler {
         System.out.println("");
     }
 
+    public void showUserInfo(User user){
+        System.out.println("Name: " + user.getName());
+        System.out.println("Email: "+ user.getEmail());
+        System.out.println("Phone: "+ user.getPhone());
+    }
+
     public void showCheckInBooksList(ItemsManager itemsManager){
         ArrayList<Book> booksList = itemsManager.getCheckInList();
 
         for(int i = 0; i < booksList.size(); i++){
             System.out.println((i+1)+")Title:"+booksList.get(i).getName()+
                     "|Author:"+booksList.get(i).getAuthor()+
-                    "|Year:"+booksList.get(i).getYear());
+                    "|Year:"+booksList.get(i).getYear()+
+                    "|User:"+booksList.get(i).getUser().getIdNumber());
         }
         System.out.println("");
     }

@@ -7,11 +7,18 @@ import static org.junit.Assert.*;
 
 public class MovieTest {
     Movie killBill;
+    User user;
     @Before
     public void createKillBill(){
         killBill = new Movie("Kill Bill", "Tarantino", 2004, 7.58);
+        user = new User("123-4567", "123");
     }
 
+    @Test
+    public void verifyCheckout(){
+        killBill.checkout(user);
+        assertEquals("123-4567", killBill.getUser().getIdNumber());
+    }
 
     @Test
     public void verifyMovieCreatedWithRating(){
